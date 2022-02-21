@@ -1,0 +1,22 @@
+
+
+.productContainer{
+  display: flex;
+  flex-wrap: wrap;
+}
+.productItem{
+  width: 200px;
+  margin: 30px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.productItem img{
+  width: 100%;
+  margin-bottom: 20px;
+}
+.hakuPalkki{
+  display: flex;
+  margin: 30px;
+}

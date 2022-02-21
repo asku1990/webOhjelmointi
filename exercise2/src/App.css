@@ -1,0 +1,35 @@
+.bigTitle{
+  background-color: rgb(9, 236, 46);
+  color: rgb(240, 2, 62);
+  font-size:40px;
+}
+
+.headerOuter {
+  background-color: rgb(252, 6, 47);
+  color: bisque;
+
+ 
+}
+
+.headerInner {
+  width:800px;
+  margin-left: auto;
+  margin-right: auto;
+  display:flex;
+  justify-content: space-evenly;
+}
+
+.headerInner > .otsikko{
+ font-size:20px
+}
+
+.headerInner > .navbtn{
+
+margin-right: 20px;
+margin-left: 20px;
+}
+
+
+li.isChecked {
+  text-decoration: line-through;
+}

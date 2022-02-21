@@ -1,0 +1,196 @@
+h2 {
+  font-size: inherit;
+}
+h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+div{
+  display: block;
+}
+li{
+  display: list-item;
+  text-align: --webkit-match-parent;
+}
+.uppercase{
+  text-transform: uppercase;
+}
+.font-bold{
+  font-weight: 700;
+}
+.bg-tricker-20{
+  --bg-opacity: 1;
+  background-color: rgba(65, 150, 164, var(--bg-opacity));
+}
+.mb-2{
+  margin-bottom: 2px;
+}
+.py-12{
+  padding-bottom: 12px;
+  padding-top: 12px;
+}
+.ticker-20{
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255,255,255,var(--text-opacity));
+  font-family: Helsingin,Helvetica,Arial,sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.px-16{
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.article-title-40{
+  --text-opacity: 1;
+  color: #191919;
+  color: rgba(25,25,25,var(--text-opacity));
+  font-family: Sanomat,Georgia,Baskerville,serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+.mx-16{
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.mb-8 {
+margin-bottom: 8px;
+}
+.article-ingress-20{
+  --text-opacity: 1;
+  color: #191919;
+  color: rgba(25,25,25,var(--text-opacity));
+  font-family: Sanomat,Georgia,Baskerville,serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.mb-16 {
+  margin-bottom: 16px;
+}
+.flex {
+display: flex;
+}
+.border-divider-1 {
+--border-opacity: 1;
+border-color: #e9eaed;
+border-color: rgba(233,234,237,var(--border-opacity));
+}
+.max-w-main {
+max-width: 640px;
+}
+.lg\:w-main {
+width: 640px;
+}
+.lg\:block {
+display: block;
+}
+.w-right {
+width: 308px;
+}
+.ml-16 {
+margin-left: 16px;
+}
+.flex-col{
+  flex-direction: column;
+}
+.self-center{
+  align-self: center;
+}
+.w-full{
+  width: 100%;
+}
+.list-title-sidelane {
+  color: #191919;
+  color: rgba(25,25,25,var(--text-opacity));
+  font-size: .9375rem;
+  line-height: 1.2;
+}
+.list-title-sidelane {
+  --text-opacity: 1;
+  font-family: Helsingin,Helvetica,Arial,sans-serif;
+  font-weight: 400;
+}
+.divider.jsx-736331785 {
+  margin: 0 0.3em;
+}
+.inline-block {
+  display: inline-block;
+}
+.list-storylogo {
+  font-weight: 700;
+}
+.py-16 {
+  padding-bottom: 16px;
+  padding-top: 16px;
+}
+.border-b {
+  border-bottom-width: 5px;
+}
+ol li {
+  counter-increment: list-counter;
+}
+.headerOuter{
+    background-color: #020270;    
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.headerInner{
+  display: flex;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
+  margin-top: 5px;
+  align-items: center;
+
+
+}
+.headerInner > .menuElement {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.testia{
+    width: auto;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.hesari{
+  font-size: x-large;
+  margin-left: 50px;
+  width: 300px;
+}
+.paaAsettelu{
+  background-color: #cbcbc98c;
+}
+.artikkeliAsettelu{
+  margin-bottom: 15px;
+  background-color: white;
+  margin-right: 15px;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.oikeaReuna{
+  margin-right: 15px;
+}
+.vasenReuna{
+  margin-left: 15px;
+}
+.margin15{
+  margin: 15px;
+}
+.luetutOtsikko{
+  font-size: 20px;
+}
+.luetutTeksti{
+  font-size: 15px;
+  font-weight: 400;
+}
