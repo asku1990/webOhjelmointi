@@ -1,7 +1,7 @@
 import React from "react";
 
     const SearchBar = (props) => (
-        <form action="/" method="get">
+            <form>
             <label htmlFor="header-search">
                 <span>Etsi tuotteista</span>
             </label>
@@ -12,8 +12,7 @@ import React from "react";
                 name="s" 
             />
             <button type="submit">HAE </button>
-           
-        </form>
+            </form>
     );
 
 export default SearchBar;

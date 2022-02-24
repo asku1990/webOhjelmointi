@@ -1,5 +1,5 @@
 import React from "react";
-//import naytto from './naytto.jpg'
+
 
 
 export default function ProductItem(props){
