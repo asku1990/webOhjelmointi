@@ -7,8 +7,6 @@ import EditorView from './components/EditorView'
 import SearchBar from './components/SearchBar';
 import SearchListView from './components/SearchListView';
 
-
-
 function App() {
 
     const[editorModeOn, setEditorModeOn] = useState(false);
@@ -42,9 +40,7 @@ function App() {
             teksti: "Logitech MK270 Wireless Keyboard and Mouse Combo for Windows, 2.4 GHz Wireless, Compact Mouse, 8 Multimedia and Shortcut Keys, 2-Year Battery Life, for... ",
             price: 50
           },
-            
       ]);
-
 
       //tästä alkaa ohjelmaa joka  vaihtaa editor moden ja normaalin välillä ja poistaa taulukon osia
       const onItemDelete = (item) => {
@@ -70,7 +66,6 @@ function App() {
       };
       const filteredProducts = filterProducts(products, query);
 
-
       // Määritetään Output //////////////////////////////////////////
      let output;
 
@@ -83,19 +78,17 @@ function App() {
       console.log("Modet Of")
      }
 
-   
-
 return (
-
 
     <div >   
       <div className='hakuPalkki'>
+
         <div> <SearchBar /> </div>
         <button onClick={ ()=> setEditorModeOn(!editorModeOn) }> Muokkaa </button>
         
       </div>
-      <div> {output}
-     </div>
+      
+      <div> {output} </div>
           
     </div>
 )
