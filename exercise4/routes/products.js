@@ -34,8 +34,6 @@ const products =[
       },
 ];
 
-
-
 // define the home page route
 
 router.get('/',(req, res) => {
