@@ -72,8 +72,6 @@ router.get('/:products', (req, res) => {
        res.sendStatus(202);
     }
   })
-
-  
 })
 
 router.post('/', (req, res) => {

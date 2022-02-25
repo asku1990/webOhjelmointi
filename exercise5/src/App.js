@@ -45,16 +45,25 @@ function App() {
       };
       const filteredProducts = filterProducts(products, query);
 
+      //tässä lisätään tuotteet listaan///////////////////////////////
+      const listAddition = (name, price) => {         
+        axios.post('http://localhost:3000/products/', {
+          "name": name,
+          "price": price,
+        })
+      }
+
       // Määritetään Output //////////////////////////////////////////
      let output;
 
      if ( editorModeOn === true ) {
-         output = <EditorView products={products} onItemDelete={ onItemDelete}/>
-         console.log("Editor Mode On")
+        output = <EditorView products={products} onItemDelete={ onItemDelete}
+        listAddition={listAddition}/>
+       //  console.log("Editor Mode On")
      }
      else{
       output = < ProductListView products={filteredProducts} />
-      console.log("Modet Of")
+    // console.log("Modet Of")
      }
 
 return (
