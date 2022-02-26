@@ -19,7 +19,6 @@ const handlePriceChange = (event) => {
     setPrice(event.target.value);
     }
     
-
     return (
         <div>
             <h1>EditorView</h1>
@@ -32,7 +31,9 @@ const handlePriceChange = (event) => {
             </form>
 
             <div>  
-                {props.products.map(p => <div> {p.name} <button onClick={ ()=> props.onItemDelete(p)}> DEL </button></div> )}
+
+               { props.products.map(p => <div> {p.name} <button onClick={ ()=> props.itemDeleteItem(p) }> DEL </button></div> )}
+          
             </div>
         </div>
     )

@@ -6,43 +6,23 @@ const router = express.Router()
 const products =[
     {
         id: uuidv4(),
-        name: "Apple kyna",
-        image: "/static/media/kyna.38709bbbb67a3d7eecda.png",
-        teksti: "Apple Pencil (2nd Generation)",
+        name: "Apple",
         price: 50
       },
       {
         id: uuidv4(),
-        name: "Kiintolevy",
-        image: "/static/media/kiintoLevy.46efd7ba6ef5b30fed43.png",
-        teksti: "Seagate Portable 2TB External Hard Drive Portable HDD – USB 3.0 for PC, Mac, PlayStation, & Xbox - 1-Year Rescue Service (STGX2000400)",
+        name: "Kyna",
         price: 100
       },
-      {
-        id: uuidv4(),
-        name: "naytto",
-        image: "/static/media/naytto.8c041c123cc4a7b37fc3.png",
-        teksti: "HP 24mh FHD Monitor - Computer Monitor with 23.8-Inch IPS Display (1080p) - Built-In Speakers and VESA Mounting - Height/Tilt Adjustment for... ",
-        price: 200
-      },
-      {
-        id: uuidv4(),
-        name: "Nappis",
-        image: "/static/media/nappis.c0695e281f63f36cb58d.png",
-        teksti: "Logitech MK270 Wireless Keyboard and Mouse Combo for Windows, 2.4 GHz Wireless, Compact Mouse, 8 Multimedia and Shortcut Keys, 2-Year Battery Life, for... ",
-        price: 50
-      },
 ];
-
-// define the home page route
 
 router.get('/',(req, res) => {
     res.json(products);
 })
 
+
+// hae tuote id.n mukaan
 router.get('/:products', (req, res) => {
-  //  console.log(req.params);
-  //  console.log(reg.params.todoId);
 
   let foundIndex = -1;
   for(let i = 0; i < products.length; i++){
@@ -56,8 +36,29 @@ router.get('/:products', (req, res) => {
   } else {
       res.json(products[foundIndex]);
   }
+})
+// hae tuotenimen mukaan
+router.get('/productsname/:productname', (req, res) => {
+  //  console.log(req.params);
+  //  console.log(reg.params.todoId);
 
+  let foundIndex = -1;
+  for(let i = 0; i < products.length; i++){
+    if (products[i].name === req.params.productname) {
+        foundIndex = i;
+        break;
+    }
+  }
+  if(foundIndex === -1) {
+      res.sendStatus(404);
+  } else {
+      res.json(products[foundIndex]);
+  }
+})
+//poista tuote
   router.delete('/:products', (req, res) => {
+  //  let foundIndex = products.findIndex(i=> i.id === req.params.products);
+
     let foundIndex = -1;
     for(let i = 0; i < products.length; i++){
       if (products[i].id === req.params.products) {
@@ -72,8 +73,8 @@ router.get('/:products', (req, res) => {
        res.sendStatus(202);
     }
   })
-})
 
+//lisää tuote
 router.post('/', (req, res) => {
     console.log(req.body);
 
@@ -83,7 +84,7 @@ router.post('/', (req, res) => {
         teksti: req.body.teksti,
         price: req.body.price
     });
-
+//muokkaa tuotetta
     router.put('/:products', (req, res) => {
         let foundTodo = products.find(t => t.id === req.params.products);
         if(foundTodo ) {

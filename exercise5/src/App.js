@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import ProductListView from './components/ProductsListView';
 import EditorView from './components/EditorView'
 import SearchBar from './components/SearchBar';
-import SearchListView from './components/SearchListView';
 import axios from 'axios';
 
 function App() {
@@ -12,6 +11,7 @@ function App() {
 
     const [products, setProducts] = useState([]);
 
+      // haetaan taulukko tietokannasta
     useEffect(() => {
     const getData = async () => {
     const results = await axios.get('http://localhost:3000/products')
@@ -21,15 +21,7 @@ function App() {
     getData();
   }, []);
 
-      //tästä alkaa ohjelmaa joka  vaihtaa editor moden ja normaalin välillä ja poistaa taulukon osia
-      const onItemDelete = (item) => {
-          let newProds = [...products];
-          let deletedItemIndex = newProds.findIndex(p => p.id === item.id);
-          newProds.splice(deletedItemIndex, 1);
-          setProducts(newProds);
-      }
-
-      //tästä alkaa hakupalkin koodi ///////////////////////////////////
+      //tästä alkaa hakupalkin koodi muokataan näytettävää sisältöä ///////////////////////////////////
       const { search } = window.location;
       const query = new URLSearchParams(search).get('s');
 
@@ -45,27 +37,36 @@ function App() {
       };
       const filteredProducts = filterProducts(products, query);
 
-      //tässä lisätään tuotteet listaan///////////////////////////////
-      const listAddition = (name, price) => {         
-        axios.post('http://localhost:3000/products/', {
+      //tässä lisätään tuotteet listaan mutta sivu täytyy päivittää napin painalluksen jälkeen
+      const listAddition = async (name, price) => {         
+        await axios.post('http://localhost:3000/products/', {
           "name": name,
           "price": price,
         })
+        window.location.reload(false)
+      }
+      //tuotteen poistaminen toimii mutta sivu on päivitettävä
+      const itemDeleteItem = async (productId) =>{
+        await axios.delete("http://localhost:3000/products/"+productId.id)
+        console.log(productId);
+        window.location.reload(false)
       }
 
       // Määritetään Output //////////////////////////////////////////
      let output;
 
      if ( editorModeOn === true ) {
-        output = <EditorView products={products} onItemDelete={ onItemDelete}
-        listAddition={listAddition}/>
+        output = <EditorView products={products} 
+        itemDeleteItem={itemDeleteItem}
+        listAddition={listAddition}
+        />
        //  console.log("Editor Mode On")
      }
      else{
       output = < ProductListView products={filteredProducts} />
     // console.log("Modet Of")
      }
-
+     
 return (
 
     <div >   
@@ -73,7 +74,7 @@ return (
 
         <div> <SearchBar /> </div>
 
-        <button onClick={ ()=> setEditorModeOn(!editorModeOn) }> Muokkaa </button>
+        <button onClick={ ()=> setEditorModeOn(!editorModeOn)}> Muokkaa </button>
         
       </div>
       

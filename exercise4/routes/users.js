@@ -16,12 +16,12 @@ const users =[
       },
 ];
 
-// define the home page route
-
+// hae käyttäjät
 router.get('/',(req, res) => {
     res.json(users);
 })
 
+//hae käyttäjä id.llä
 router.get('/:users', (req, res) => {
   //  console.log(req.params);
   //  console.log(reg.params.todoId);
@@ -38,7 +38,7 @@ router.get('/:users', (req, res) => {
   } else {
       res.json(users[foundIndex]);
   }
-
+  // poista käyttäjä id.llä
   router.delete('/:users', (req, res) => {
     let foundIndex = -1;
     for(let i = 0; i < users.length; i++){
@@ -58,6 +58,7 @@ router.get('/:users', (req, res) => {
   
 })
 
+//lisää käyttäjä
 router.post('/', (req, res) => {
     console.log(req.body);
 

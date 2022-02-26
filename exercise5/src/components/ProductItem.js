@@ -1,6 +1,6 @@
 import React from "react";
 
-
+// listan tulostus
 
 export default function ProductItem(props){
   return (
