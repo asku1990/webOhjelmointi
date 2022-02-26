@@ -1,5 +1,6 @@
 import React from "react";
 
+// hakupalkki
     const SearchBar = (props) => (
             <form>
             <label htmlFor="header-search">
