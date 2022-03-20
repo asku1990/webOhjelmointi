@@ -15,6 +15,8 @@ const shoppinki = require ('./routes/shoppinki')
 app.use(cors());
 app.use(bodyParser.json());
 
+app.use(express.static('build'))
+
 app.use('/products', products)
 app.use('/users', users)
 app.use('/invoices', invoices)
